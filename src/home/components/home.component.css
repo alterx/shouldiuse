@@ -1,0 +1,21 @@
+
+section {
+  background-color: #e1eef6;
+  height: 100%;
+  width: 100%;
+}
+
+h1, input, button {
+  margin: 0 auto;
+  width: 30%;
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  font-family: monospace;
+  color: #fcbe32;
+  color: #ff5f2e;
+}
+
+button {
+  background-color: #004e66;
+}
