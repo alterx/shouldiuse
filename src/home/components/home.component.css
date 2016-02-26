@@ -1,7 +1,12 @@
 
-section {
+section.results {
   background-color: #e1eef6;
   height: 100%;
+  width: 100%;
+}
+
+section.results {
+  height: auto;
   width: 100%;
 }
 

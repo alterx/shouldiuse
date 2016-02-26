@@ -1,23 +1,24 @@
 import {Component} from 'angular2/core';
-import {CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
+import {NgFor, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
+import {GithubInformationService} from '../../shared/services/github-information.service';
 
 @Component({
   selector: 'sd-home',
   moduleId: module.id,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
+  directives: [NgFor, FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
 export class HomeComponent {
-  newName: string;
-  constructor() {
-      this.newName = '';
+  repos: Array<Object>;
+
+  constructor(public gh: GithubInformationService) {
   }
 
   /*
    * @param name any text as input.
    */
   search(name: string): any {
-    console.log(name);
+    this.gh.search(name).subscribe(repos => this.repos = repos.items);
   }
 }

@@ -1,15 +1,14 @@
-export class GithubInformationService {
-  names = [
-    'Edsger Dijkstra',
-    'Donald Knuth',
-    'Alan Turing',
-    'Grace Hopper'
-  ];
+import {Http} from 'angular2/http';
+import {Injectable} from 'angular2/core';
+import 'rxjs/add/operator/map';
 
-  get(): string[] {
-    return this.names;
+@Injectable()
+export class GithubInformationService {
+
+  constructor(public http: Http) {
   }
-  add(value: string): void {
-    this.names.push(value);
+
+  search(name: string) {
+    return this.http.get('http://localhost:8000/api/repositories?search=' + name).map(res => res.json());
   }
 }
