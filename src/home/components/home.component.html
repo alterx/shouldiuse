@@ -1,17 +1,18 @@
 <section class="searchbar">
-    <h1>Should I Use _______ ?</h1>
 
-    <input type="text" #name />
+  <div>
+    <h1>Should I Use</h1>
+    <input type="text" #name (keypress)="search($event.keyCode, name.value)" />
+    <button (click)="search(null, name.value)">Search</button>
+  </div>
+</section>
 
-    <button (click)="search(name.value)">Search</button>
-
-  <section class="results grid">
-    <ul>
-      <li class="col-1-4" *ngFor="#repo of repos">
-        <div>
-          {{ repo.full_name }}
-        </div>
-      </li>
-    </ul>
-  </section>
+<section class="results grid">
+  <ul>
+    <li class="col-1-4" *ngFor="#repo of repos">
+      <div>
+        {{ repo.full_name }}
+      </div>
+    </li>
+  </ul>
 </section>

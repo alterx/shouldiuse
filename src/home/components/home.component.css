@@ -3,16 +3,28 @@ section.searchbar {
   background-color: #e1eef6;
   height: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.searchbar div {
+  -webkit-box-flex: 0;
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+    width: 30%;
 }
 
 section.results {
   height: auto;
   width: 100%;
+  padding: 30px 0;
 }
 
 h1, input, button {
   margin: 0 auto;
-  width: 30%;
+  width: 100%;
   display: block;
   margin-top: 20px;
   text-align: center;
@@ -22,6 +34,10 @@ h1, input, button {
 
 button {
   background-color: #004e66;
+}
+
+h1 {
+  margin-top: 0;
 }
 
 ul {

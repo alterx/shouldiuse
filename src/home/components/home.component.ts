@@ -18,7 +18,9 @@ export class HomeComponent {
   /*
    * @param name any text as input.
    */
-  search(name: string): any {
-    this.gh.search(name).subscribe(repos => this.repos = repos.items);
+  search(keyCode, name: string): any {
+    if(!keyCode || keyCode === 13) {
+      this.gh.search(name).subscribe(repos => this.repos = repos.items);
+    }
   }
 }
