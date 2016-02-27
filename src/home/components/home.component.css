@@ -1,5 +1,5 @@
 
-section.results {
+section.searchbar {
   background-color: #e1eef6;
   height: 100%;
   width: 100%;
@@ -17,10 +17,27 @@ h1, input, button {
   margin-top: 20px;
   text-align: center;
   font-family: monospace;
-  color: #fcbe32;
   color: #ff5f2e;
 }
 
 button {
   background-color: #004e66;
+}
+
+ul {
+  list-style: none;
+}
+
+li div:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+li div {
+  height: 80px;
+  background-color: #fcbe32;
+  padding: 20px;
+  word-wrap: break-word;
+  word-break: break-word;
+  cursor: pointer;
+  margin-bottom: 15px;
 }

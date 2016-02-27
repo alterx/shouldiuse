@@ -41,3 +41,6 @@ docs
 lib
 test
 tmp
+
+
+.DS_Store

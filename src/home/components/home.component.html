@@ -5,13 +5,13 @@
 
     <button (click)="search(name.value)">Search</button>
 
-
-  <section class="results">
+  <section class="results grid">
     <ul>
-      <li  *ngFor="#repo of repos">
-        {{ repo.full_name }}
+      <li class="col-1-4" *ngFor="#repo of repos">
+        <div>
+          {{ repo.full_name }}
+        </div>
       </li>
     </ul>
   </section>
-
 </section>
