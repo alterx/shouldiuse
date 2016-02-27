@@ -1,6 +1,5 @@
 import {Component, ViewEncapsulation} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
-import {NavbarComponent} from './navbar.component';
 import {HomeComponent} from '../../home/components/home.component';
 import {AboutComponent} from '../../about/components/about.component';
 
@@ -10,7 +9,7 @@ import {AboutComponent} from '../../about/components/about.component';
   moduleId: module.id,
   templateUrl: './app.component.html',
   encapsulation: ViewEncapsulation.None,
-  directives: [ROUTER_DIRECTIVES, NavbarComponent]
+  directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
   { path: '/',      name: 'Home',  component: HomeComponent  },
