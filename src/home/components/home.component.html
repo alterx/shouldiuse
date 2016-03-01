@@ -1,5 +1,5 @@
 <section class="searchbar"
-  [ngClass]="{'reduce-height': repos.length}">
+  [ngClass]="{'reduce-height': visible}">
   <div>
     <h1>Should I Use</h1>
     <input type="text" #name (keypress)="search($event.keyCode, name.value)" />

@@ -15,23 +15,22 @@ export class HomeComponent {
   visible: Boolean;
 
   constructor(public gh: GithubInformationService, private _router: Router) {
-
-    this.repos = [];
     this.visible = false;
-
   }
 
   onSelect(event, repo) {
     console.log(repo);
-    this._router.navigate( ['RepoDetail', { id: repo.id }] );
+    this._router.navigate( ['RepoDetail', { repoId: repo.name, ownerId: repo.owner.login }] );
   }
 
   /*
    * @param name any text as input.
    */
   search(keyCode, name: string): any {
+    console.log(name);
     if(!keyCode || keyCode === 13) {
       this.gh.search(name).subscribe(repos => {
+        console.log(repos);
         this.repos = repos.items;
         this.visible = true;
       });

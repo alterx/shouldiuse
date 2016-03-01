@@ -14,6 +14,6 @@ import {FooterComponent} from '../../app/components/footer.component';
 })
 @RouteConfig([
   { path: '/',      name: 'Home',  component: HomeComponent  },
-  { path:'/repo/:id', name: 'RepoDetail', component: DetailComponent}
+  { path:'/repo/:ownerId/:repoId', name: 'RepoDetail', component: DetailComponent}
 ])
 export class AppComponent {}

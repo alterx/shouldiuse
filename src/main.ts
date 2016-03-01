@@ -4,12 +4,14 @@ import {bootstrap} from 'angular2/platform/browser';
 import {ROUTER_PROVIDERS, APP_BASE_HREF} from 'angular2/router';
 import {AppComponent} from './app/components/app.component';
 import {GithubInformationService} from './shared/services/github-information.service';
+import {StackoverflowInformationService} from './shared/services/stackoverflow-information.service';
 
 if ('<%= ENV %>' === 'prod') { enableProdMode(); }
 
 bootstrap(AppComponent, [
-  HTTP_PROVIDERS,
   GithubInformationService,
+  StackoverflowInformationService,
+  HTTP_PROVIDERS,
   ROUTER_PROVIDERS,
   provide(APP_BASE_HREF, { useValue: '<%= APP_BASE %>' })
 ]);

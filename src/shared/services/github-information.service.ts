@@ -11,4 +11,8 @@ export class GithubInformationService {
   search(name: string) {
     return this.http.get('http://localhost:8000/api/repositories?search=' + name).map(res => res.json());
   }
+
+  repo(ownerId: string, repoId: string) {
+    return this.http.get('http://localhost:8000/api/repository?repoId=' + repoId + '&ownerId=' + ownerId).map(res => res.json());
+  }
 }
