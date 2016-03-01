@@ -1,5 +1,6 @@
 import {Component} from 'angular2/core';
 import {NgFor, NgClass, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
+import {Router} from 'angular2/router';
 import {GithubInformationService} from '../../shared/services/github-information.service';
 
 @Component({
@@ -13,9 +14,16 @@ export class HomeComponent {
   repos: Array<Object>;
   visible: Boolean;
 
-  constructor(public gh: GithubInformationService) {
+  constructor(public gh: GithubInformationService, private _router: Router) {
+
     this.repos = [];
     this.visible = false;
+
+  }
+
+  onSelect(event, repo) {
+    console.log(repo);
+    this._router.navigate( ['RepoDetail', { id: repo.id }] );
   }
 
   /*

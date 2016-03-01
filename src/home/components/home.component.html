@@ -10,7 +10,7 @@
 <section class="results grid"
   [hidden]="!visible">
   <ul>
-    <li class="col-1-4" *ngFor="#repo of repos">
+    <li class="col-1-4" *ngFor="#repo of repos" (click)="onSelect($event, repo)">
       <div>
         {{ repo.full_name }}
       </div>
