@@ -1,5 +1,5 @@
-<section class="searchbar">
-
+<section class="searchbar"
+  [ngClass]="{'reduce-height': repos.length}">
   <div>
     <h1>Should I Use</h1>
     <input type="text" #name (keypress)="search($event.keyCode, name.value)" />
@@ -7,7 +7,8 @@
   </div>
 </section>
 
-<section class="results grid">
+<section class="results grid"
+  [hidden]="!visible">
   <ul>
     <li class="col-1-4" *ngFor="#repo of repos">
       <div>
