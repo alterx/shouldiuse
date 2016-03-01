@@ -19,7 +19,6 @@ export class HomeComponent {
   }
 
   onSelect(event, repo) {
-    console.log(repo);
     this._router.navigate( ['RepoDetail', { repoId: repo.name, ownerId: repo.owner.login }] );
   }
 
@@ -27,10 +26,8 @@ export class HomeComponent {
    * @param name any text as input.
    */
   search(keyCode, name: string): any {
-    console.log(name);
     if(!keyCode || keyCode === 13) {
       this.gh.search(name).subscribe(repos => {
-        console.log(repos);
         this.repos = repos.items;
         this.visible = true;
       });

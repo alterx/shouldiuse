@@ -1,5 +1,28 @@
-<section>
-  <h1>Details</h1>
-  <pre>{{ repo | json }}</pre>
-  <pre>{{ tags | json }}</pre>
+<section class="main" [ngClass]="{'loaded': done}">
+  <h1>{{ repo.name }}</h1>
+  <h2>{{ repo.description }}</h2>
+
+  <label> Language <span>{{ repo.language }}</span></label>
+
+  {{ repo.stargazers_count }} stars.
+  Has {{ repo.open_issues }}  open issues.
+  Updated on {{ repo.updated_at }}.
+
+
+  <a href="{{ repo.html_url }}" target="_blank"> Go to repo. </a>
+  <a href="{{ repo.homepage }}" target="_blank"> Go to homepage. </a>
+
+
+  <label> Http clone url <span>{{ repo.clone_url }}</span></label>
+  <label> Git clone url <span>{{ repo.git_url }}</span></label>
+
+  <section class="tags grid">
+    <ul>
+      <li class="col-1-4" *ngFor="#tag of tags">
+        <a href="http://{{ tag.tagUrl }}" target="_blank">
+            {{ tag.tag }}, {{ tag.count }} questions.
+        </a>
+      </li>
+    </ul>
+  </section>
 </section>
