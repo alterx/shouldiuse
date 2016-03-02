@@ -6,7 +6,7 @@
 
   {{ repo.stargazers_count }} stars.
   Has {{ repo.open_issues }}  open issues.
-  Updated on {{ repo.updated_at }}.
+  Updated on {{ repo.updated_at | date }}.
 
 
   <a href="{{ repo.html_url }}" target="_blank"> Go to repo. </a>

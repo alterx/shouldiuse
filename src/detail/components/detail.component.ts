@@ -37,8 +37,9 @@ export class DetailComponent implements OnInit {
     .subscribe(
       data => {
         if(data.name) {
+          data.updated_at = new Date(data.updated_at);
           this.repo = data;
-        } else if(data[0].techStack) {
+        } else if(data.length && data[0].techStack) {
           this.projects = data;
         } else {
           this.tags = data;
